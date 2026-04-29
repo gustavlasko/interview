@@ -1,0 +1,21 @@
+---
+name: Merge to master
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  lint:
+    permissions:
+      contents: read
+    uses: ./.github/workflows/lint.yml
+  build:
+    permissions:
+      contents: read
+      packages: write
+    uses: ./.github/workflows/build-and-push.yml
+    needs: lint
+    with:
+      push_image: true
