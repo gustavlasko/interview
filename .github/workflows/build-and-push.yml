@@ -35,11 +35,23 @@ jobs:
         username: ${{ github.actor }}
         password: ${{ secrets.GITHUB_TOKEN }}
 
+    - name: Extract version from pom.xml
+      id: extract_version
+      run: |
+        version=$(xmllint --xpath "/*[local-name()='project']/*[local-name()='version']/text()" backend/pom.xml)
+        if [[ -z "$version" ]]; then
+          echo "::error::Failed to extract version from backend/pom.xml"
+          exit 1
+        fi
+        printf 'version=%s\n' "$version" >> "$GITHUB_OUTPUT"
+
     - name: Build and push Docker image
       uses: docker/build-push-action@v7
       with:
         context: .
         push: ${{ inputs.push_image }}
-        tags: ${{ env.IMAGE_REF }}:latest   # TODO: add version tag
+        tags: |
+          ${{ env.IMAGE_REF }}:latest
+          ${{ env.IMAGE_REF }}:${{ env.VERSION }}
         cache-from: type=gha
         cache-to: type=gha,mode=max
