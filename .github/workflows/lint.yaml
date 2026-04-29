@@ -1,0 +1,15 @@
+---
+name: Lint files
+
+on:
+  workflow_call
+
+jobs:
+  lint_yaml:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v6
+
+      - name: Run yamllint
+        run: yamllint -c .yamllint.yaml .
