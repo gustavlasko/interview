@@ -1,10 +1,14 @@
 ---
-name: Merge to master
+name: Merge backend to master
 
 on:
   push:
     branches:
       - master
+    paths:
+      - 'backend/**'
+      - 'Dockerfile'
+      - '.github/workflows/**'
 
 jobs:
   lint:
