@@ -6,6 +6,10 @@ on:
     branches:
       - master
 jobs:
+  lint:
+    permissions:
+      contents: read
+    uses: ./.github/workflows/lint.yml
   build:
     permissions:
       contents: read
