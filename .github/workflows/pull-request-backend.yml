@@ -5,6 +5,11 @@ on:
   pull_request:
     branches:
       - master
+    paths:
+      - 'backend/**'
+      - 'Dockerfile'
+      - '.github/workflows/**'
+
 jobs:
   lint:
     permissions:
