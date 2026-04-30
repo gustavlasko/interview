@@ -8,6 +8,12 @@ on:
     paths:
       - 'sre/interview-app/**'
       - '.github/workflows/validate-helm.yml'
+  pull_request:
+    branches:
+      - master
+    paths:
+      - 'sre/interview-app/**'
+      - '.github/workflows/validate-helm.yml'
 
 jobs:
   validate:
