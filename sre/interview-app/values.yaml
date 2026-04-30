@@ -93,3 +93,7 @@ topologySpreadConstraints:
   - maxSkew: 1
     topologyKey: kubernetes.io/hostname
     whenUnsatisfiable: DoNotSchedule
+
+metrics:
+  enabled: true
+  interval: 30s
