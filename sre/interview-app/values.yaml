@@ -78,6 +78,12 @@ tolerations: []
 
 affinity: {}
 
+strategy:
+  type: RollingUpdate
+  rollingUpdate:
+    maxSurge: 1
+    maxUnavailable: 0
+
 podDisruptionBudget:
   enabled: true
   minAvailable: 1
