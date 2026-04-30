@@ -60,9 +60,13 @@ autoscaling:
   targetCPUUtilizationPercentage: 80
   targetMemoryUtilizationPercentage: 80
 
-volumes: []
+volumes:
+  - name: tmp
+    emptyDir: {}
 
-volumeMounts: []
+volumeMounts:
+  - name: tmp
+    mountPath: /tmp
 
 nodeSelector: {}
 
