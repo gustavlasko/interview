@@ -78,6 +78,11 @@ tolerations: []
 
 affinity: {}
 
+podDisruptionBudget:
+  enabled: true
+  minAvailable: 1
+  unhealthyPodEvictionPolicy: AlwaysAllow
+
 topologySpreadConstraints:
   - maxSkew: 1
     topologyKey: kubernetes.io/hostname
