@@ -2,9 +2,9 @@
 replicaCount: 1
 
 image:
-  repository: nginx
+  repository: ghcr.io/gustavlasko/interview-app
   pullPolicy: IfNotPresent
-  tag: ""
+  tag: "1.0-SNAPSHOT"
 
 nameOverride: ""
 fullnameOverride: ""
