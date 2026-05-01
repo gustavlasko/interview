@@ -97,3 +97,9 @@ topologySpreadConstraints:
 metrics:
   enabled: true
   interval: 30s
+
+networkPolicy:
+  enabled: true
+  ingressNamespace: kube-system #  Namespace of ingress controller
+  monitoringNamespace: monitoring # Namespace of monitoring tools (e.g. Prometheus)
+  extraEgressRules: []
