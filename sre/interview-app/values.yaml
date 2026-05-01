@@ -103,3 +103,18 @@ networkPolicy:
   ingressNamespace: kube-system #  Namespace of ingress controller
   monitoringNamespace: monitoring # Namespace of monitoring tools (e.g. Prometheus)
   extraEgressRules: []
+
+env: []
+# env:
+#   - name: SPRING_DATASOURCE_URL
+#     value: jdbc:h2:mem:testdb
+#   - name: SPRING_DATASOURCE_USERNAME
+#     valueFrom:
+#       secretKeyRef:
+#         name: my-secret
+#         key: username
+#   - name: SPRING_DATASOURCE_PASSWORD
+#     valueFrom:
+#       secretKeyRef:
+#         name: my-secret
+#         key: password
