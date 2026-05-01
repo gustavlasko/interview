@@ -2,7 +2,7 @@
 image:
   repository: ghcr.io/gustavlasko/interview-app
   pullPolicy: IfNotPresent
-  tag: "1.1.1"
+  tag: "1.2.0"
 
 nameOverride: ""
 fullnameOverride: ""
