@@ -10,7 +10,7 @@
 
 ### Pre-requisites
 
-- Docker
+- [Docker](https://docs.docker.com/get-started/get-docker/)
 
 ### Build the image
 
@@ -46,11 +46,13 @@ The chart at `sre/interview-app/` is published automatically on merges to `maste
 
 ### Pre-requisites
 
-- Helm 3
+- [Helm 3](https://helm.sh/docs/intro/install/)
 - A running Kubernetes cluster
 - Access to pull from `ghcr.io` (public packages require no auth)
 
 ### Install
+
+*Replace `<owner>` in the URLs with the ghcr.io oci owner - e.g., `gustavlasko`, `Tekmetric`
 
 ```bash
 helm install interview-app oci://ghcr.io/<owner>/charts/interview-app --version 1.0.1
